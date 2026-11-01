@@ -1,2 +1,5 @@
 <Solution>
+  <Folder Name="/src/">
+    <Project Path="src/LakbayMarket.App/LakbayMarket.App.csproj" />
+  </Folder>
 </Solution>
