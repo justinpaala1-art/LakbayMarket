@@ -1,0 +1,21 @@
+# Let Git normalise line endings (Windows checkouts use CRLF, the repo stores LF).
+* text=auto
+
+# Files that must keep LF even on Windows (CI runs on Linux).
+*.sh   text eol=lf
+*.yml  text eol=lf
+*.yaml text eol=lf
+
+# Binary files: never diff or normalise.
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.webp binary
+*.gif  binary
+*.ico  binary
+*.mp4  binary
+*.ttf  binary
+*.otf  binary
+*.keystore binary
+*.jks  binary
+*.pfx  binary

@@ -1,0 +1,64 @@
+# ---------- Build output ----------
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+publish/
+artifacts/
+*.nupkg
+*.snupkg
+*.aab
+*.apk
+*.msix
+*.msixbundle
+
+# ---------- Visual Studio / IDEs ----------
+.vs/
+*.user
+*.suo
+*.userosscache
+*.rsuser
+*.sln.docstates
+*.cache
+.idea/
+.vscode/
+
+# ---------- Tests ----------
+TestResults/
+*.trx
+*.coverage
+coverage*.xml
+
+# ---------- Logs ----------
+*.log
+
+# ---------- Secrets and signing material: NEVER commit ----------
+.env
+.env.*
+!.env.example
+appsettings.*.local.json
+appsettings.Local.json
+secrets.json
+*.keystore
+*.jks
+*.pfx
+*.p12
+*.snk
+
+# ---------- Android tooling ----------
+.gradle/
+local.properties
+
+# ---------- Local databases and data folders ----------
+*.sqlite
+*.sqlite3
+*.db
+mysql-data/
+.docker-data/
+
+# ---------- OS files ----------
+Thumbs.db
+Desktop.ini
+.DS_Store

@@ -1,0 +1,24 @@
+<Project>
+
+  <!--
+    Shared build settings for every project in the solution.
+    Do not set TargetFramework(s) here: the MAUI app multi-targets, the API does not.
+  -->
+  <PropertyGroup>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+
+    <!--
+      Warnings are NOT errors yet, so the untouched MAUI template can build during the Week 1 spike.
+      Planned tightening once the foundation is green: WarningsAsErrors=nullable, then
+      TreatWarningsAsErrors for the non-MAUI projects.
+    -->
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+
+  <!-- Deterministic builds on CI (GitHub Actions sets CI=true). -->
+  <PropertyGroup Condition="'$(CI)' == 'true'">
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+  </PropertyGroup>
+
+</Project>
