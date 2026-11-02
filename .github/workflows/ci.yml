@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+# Read-only token: this workflow only checks out code, builds and tests.
+permissions:
+  contents: read
+
+# A newer run on the same branch or pull request cancels the older one.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  api:
+    name: API build and tests (Linux)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Install the .NET SDK pinned in global.json
+        uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+
+      - name: Restore
+        run: dotnet restore src/LakbayMarket.Tests.Integration
+
+      - name: Build
+        run: dotnet build src/LakbayMarket.Tests.Integration --no-restore --configuration Release
+
+      - name: Test
+        run: dotnet test src/LakbayMarket.Tests.Integration --no-build --configuration Release
+
+# Not covered yet, by design (added in later steps):
+#   - the MAUI app (needs a Windows runner with the MAUI and Android workloads)
+#   - a MySQL service container to apply migrations against a disposable database

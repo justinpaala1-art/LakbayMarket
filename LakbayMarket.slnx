@@ -3,5 +3,6 @@
     <Project Path="src/LakbayMarket.Api/LakbayMarket.Api.csproj" />
     <Project Path="src/LakbayMarket.App/LakbayMarket.App.csproj" />
     <Project Path="src/LakbayMarket.Contracts/LakbayMarket.Contracts.csproj" />
+    <Project Path="src/LakbayMarket.Infrastructure/LakbayMarket.Infrastructure.csproj" />
   </Folder>
 </Solution>
